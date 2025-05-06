@@ -3,6 +3,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: Roboto;
 }
 .container {
     width: 100vw;
@@ -117,6 +118,7 @@ input.in:-webkit-autofill {
     padding-top: 4rem;
     padding-bottom: 4rem;
     display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
