@@ -21,3 +21,4 @@
 最下方再放上半透明區塊 加註說明
 ![image](https://github.com/user-attachments/assets/92a25855-7ca9-44f8-8dc8-64537601d2e0)
 成品
+支援手機排版rwd
