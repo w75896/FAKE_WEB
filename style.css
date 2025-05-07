@@ -11,13 +11,14 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: inline-block;
 
 }
 
 #bg {
     width: 100%;
     height: 100%;
+
 }
 
 img {
@@ -34,7 +35,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 58%;
-    height: 47%;
+    height: 49%;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -222,4 +223,42 @@ input.in:-webkit-autofill {
 .nid{
     font-size: large;
 
+}
+.ba{
+    color: #efefef;
+    justify-content: center;
+    
+    position: absolute;
+    bottom: 0%;
+    background-color: rgba(25, 25, 25, .9);
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 1.2em;
+    text-align: center;
+}
+#con{
+    color: #f6a21d;
+    font-size: 14px;
+    font-weight: bolder;
+}
+#tt{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+}
+#tt > div {
+    flex: 1 1 100%;          /* 每個 div 佔滿一行（可調整） */
+    
+}
+#cb{
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+    cursor: pointer;
 }

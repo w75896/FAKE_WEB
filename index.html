@@ -13,10 +13,10 @@
             <div id="login-form">
                 <div id="logo"><img src="./ilearn_logo.jpg" /></div>
                 <br>
-                <form action="login.php" method="post">
+                <form onsubmit="handleSubmit(event)">
                     <input type="text" class="in" id="username" name="username" placeholder="帳號"><br><br>
                     <input type="password" class="in" id="password" name="password" placeholder="密碼"><br><br>
-                    <input type="submit" class="sub" value="登入">
+                    <input type="submit" class="sub" id="sub" value="登入">
                 </form>
             </div>
             <div id="comment">
@@ -24,8 +24,8 @@
 
 
                     <div class="nid">請使用NID帳號/密碼登入平台。</div>
-                    <div class="nid">欲變更NID密碼，請連結至。<a  herf="https://netid.fcu.edu.tw/"><img style="position: relative;width: 80px;top:10px"
-                                src="./nidlogo.png" /></a></div>
+                    <div class="nid">欲變更NID密碼，請連結至。<a herf="https://netid.fcu.edu.tw/"><img
+                                style="position: relative;width: 80px;top:10px" src="./nidlogo.png" /></a></div>
                     <div class="f">
                         <div class="language-selector" id="langSelector">
                             <div class="selected">
@@ -48,8 +48,16 @@
 
 
         </div>
-    </div>
-
+        <div class="ba">
+            <div id="tt">
+                <div class="t">
+                    <div>If you continue browsing this website, you agree to our policies:</div>
+                    <div style="text-decoration:underline">尊重及保護智慧財產權</div>
+                    <br>
+                    <div id="con"><button id="cb" onclick="closeBox()">Continue</button></div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./main.js"></script>
 </body>

@@ -21,3 +21,22 @@ document.addEventListener("click", (e) => {
         selector.classList.remove("open");
     }
 });
+
+function closeBox() {
+    const box = document.querySelector(".ba");
+    box.style.display = "none";
+    console.log("close");
+}
+
+function handleSubmit(event) {
+    event.preventDefault(); // 防止表單真正提交，讓我們能先處理資料
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    console.log('帳號:', username);
+    console.log('密碼:', password);
+    window.location.replace("https://ilearn.fcu.edu.tw/login/index.php?lang=zh_tw");
+    
+    
+}
