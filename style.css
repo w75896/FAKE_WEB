@@ -39,6 +39,7 @@ img {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 446;
 }
 
 #login-form {
@@ -261,4 +262,69 @@ input.in:-webkit-autofill {
     font: inherit;
     padding: 0;
     cursor: pointer;
+}
+@media screen and (max-width: 1440px) {
+    #login-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        top: 50%;
+        padding: 1rem;
+    }
+
+    #login-form {
+        width: 100%;
+        border-right: none;
+        margin: 1rem 0;
+        padding: 1rem;
+        background:none;
+    }
+
+    #comment {
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+        background:none;
+    }
+
+    #content {
+        margin: 0;
+        padding: 2rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .in {
+        font-size: 1rem;
+        height: calc(1.2em + 0.8rem + 2px);
+        padding: 0.4rem 0.8rem;
+    }
+
+    .sub {
+        font-size: 1rem;
+        height: 2.5rem;
+    }
+
+    #logo {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .nid {
+        font-size: medium;
+    }
+
+    .f {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fa-t {
+        margin-top: 10px;
+    }
+
+    .ba {
+        height: auto;
+        
+    }
 }
