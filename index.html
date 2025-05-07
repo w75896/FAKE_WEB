@@ -5,12 +5,13 @@
     <meta name="keywords" content="moodle, iLearn: 登入本網站">
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
+
 <body>
     <div class="container">
-        <div id="bg"><img style="height: 100%" src="background.png"/></div>
+        <div id="bg"><img style="height: 100%" src="background.png" /></div>
         <div id="login-container">
             <div id="login-form">
-                <div id="logo"><img src="./ilearn_logo.jpg"/></div>
+                <div id="logo"><img src="./ilearn_logo.jpg" /></div>
                 <br>
                 <form action="login.php" method="post">
                     <input type="text" class="in" id="username" name="username" placeholder="帳號"><br><br>
@@ -19,15 +20,36 @@
                 </form>
             </div>
             <div id="comment">
-                <div id="content">  
-                    
+                <div id="content">
 
-                    <div>請使用NID帳號/密碼登入平台。</div>
-                    <div>欲變更NID密碼，請連結至。<a herf="https://netid.fcu.edu.tw/"><img style="width: 100px" src="./nidlogo.png"/></a></div>
-                    
+
+                    <div class="nid">請使用NID帳號/密碼登入平台。</div>
+                    <div class="nid">欲變更NID密碼，請連結至。<a  herf="https://netid.fcu.edu.tw/"><img style="position: relative;width: 80px;top:10px"
+                                src="./nidlogo.png" /></a></div>
+                    <div class="f">
+                        <div class="language-selector" id="langSelector">
+                            <div class="selected">
+                                正體中文 (zh_tw)
+                                <i class="arrow"></i>
+                            </div>
+                            <div class="dropdown">
+                                <div data-lang="zh_tw">正體中文 (zh_tw)</div>
+                                <div data-lang="en">English (en)</div>
+                            </div>
+                        </div>
+                        <div class="fa-t">
+                            <div class="fa">?</div>&nbsp&nbspCookie使用資訊
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
+
+
         </div>
-        
     </div>
+
+    </div>
+    <script src="./main.js"></script>
 </body>

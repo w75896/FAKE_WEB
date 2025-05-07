@@ -5,23 +5,27 @@ body {
     padding: 0;
     font-family: Roboto;
 }
+
 .container {
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
-    
+
 }
+
 #bg {
     width: 100%;
     height: 100%;
 }
-img{
+
+img {
     width: 100%;
-    
+
     object-fit: cover;
 }
+
 #login-container {
     display: flex;
     justify-content: center;
@@ -35,17 +39,19 @@ img{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-#login-form{
+
+#login-form {
     width: 50%;
     margin: 2rem;
     padding: 1rem;
     margin-right: 0px;
     padding-right: 0px;
-    
+
     border-right: 1px solid #dee2e6;
     background-color: rgb(255, 255, 255);
 }
-#comment{
+
+#comment {
     width: 50%;
     margin: 2rem;
     margin-top: 0;
@@ -57,17 +63,24 @@ img{
     padding-left: 0px;
     background-color: rgb(255, 255, 255);
 }
-#logo{
+
+#logo {
     width: 95%;
 
 }
+
 input.in:-webkit-autofill {
-    background-color: white !important; /* 設定為你想要的背景色 */
-    color: inherit !important; /* 繼承文字顏色 */
-    border: 1px solid #8f959e !important; /* 繼承邊框樣式 */
-    transition: background-color 5000s ease-in-out 0s; /* 防止背景色閃爍 */
+    background-color: white !important;
+    /* 設定為你想要的背景色 */
+    color: inherit !important;
+    /* 繼承文字顏色 */
+    border: 1px solid #8f959e !important;
+    /* 繼承邊框樣式 */
+    transition: background-color 5000s ease-in-out 0s;
+    /* 防止背景色閃爍 */
 }
-.in{
+
+.in {
     height: calc(1.5em + 1rem + 2px);
     padding: .5rem 1rem;
     font-size: 1.171875rem;
@@ -75,23 +88,25 @@ input.in:-webkit-autofill {
     width: 95%;
     border: 1px solid #8f959e;
     border-radius: .6rem;
-    
-    &:focus{
+
+    &:focus {
         border: 3px solid #ca3120;
         outline: none;
     }
 
 
-    &:active{
+    &:active {
         border: 3px solid #ca3120;
         outline: none;
     }
-    &:disabled{
+
+    &:disabled {
         border: 1px solid #8f959e;
         outline: none;
     }
 }
-.sub{
+
+.sub {
     width: 95%;
     height: 3rem;
     color: white;
@@ -103,13 +118,14 @@ input.in:-webkit-autofill {
     color: #fff;
     background-color: #99000F;
     border-color: #99000F;
-    
-    &:hover{
+
+    &:hover {
         background-color: #73000b;
         transition: all 0.3s ease-in-out;
     }
 }
-#content{
+
+#content {
     width: 100%;
     box-sizing: border-box;
     height: 100%;
@@ -118,11 +134,92 @@ input.in:-webkit-autofill {
     padding-top: 4rem;
     padding-bottom: 4rem;
     display: flex;
-    flex-direction: column; /* 垂直排列子元素 */
+    flex-direction: column;
+    /* 垂直排列子元素 */
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     color: #000000;
     font-weight: bold;
     text-align: center;
+}
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    cursor: pointer;
+    
+}
+
+.selected {
+    color: #b00000;
+    font-weight: 400;
+    font-size: 14px;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 150px;
+}
+
+.dropdown div {
+    padding: 10px;
+    font-size: 15px;
+    color: #302e2e;
+}
+
+.dropdown div:hover {
+    background-color: #f0f0f0;
+}
+
+.language-selector.open .dropdown {
+    display: block;
+}
+
+.arrow {
+    margin-left: 3px;
+    margin-bottom: 3px;
+    border: solid #b00000;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2.5px;
+    transform: rotate(45deg);
+}
+.fa {
+    background-color: #b00000;
+    font-size: 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    color: #fff;
+    width: 13px;             
+    height: 13px;
+    margin-top: 3px;
+    
+}
+.fa-t {
+    color: #b00000;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    margin-top: 5px;
+    top: 0px;
+}
+
+.f{
+    display: flex;
+    margin-top: 50px;
+}
+.nid{
+    font-size: large;
+
 }
