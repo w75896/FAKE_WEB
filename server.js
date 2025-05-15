@@ -1,12 +1,39 @@
-const http = require('http');
+// 安裝依賴：npm install express body-parser
+const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
-const sendRes = (filePath, res) => {
-    const extname = path.extname(filePath);
+const app = express();
+const port = 5001;
+const ip = '127.0.0.1';
+
+// 處理 POST 表單資料
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// 處理 POST 路由
+app.post('/submit', (req, res) => {
+    const account = req.body.username;
+    const passwd = req.body.password;
+
+    console.log('帳號:', account);
+    console.log('密碼:', passwd);
+
+});
+
+// 處理靜態檔案
+app.get('*', (req, res) => {
+    let url = req.url;
+    let filePath = path.join(__dirname, 'html', url);
+
+    // 預設首頁
+    if (url === '/') {
+        filePath = path.join(__dirname, 'html', 'index.html');
+    }
+
+    const extname = path.extname(filePath).toLowerCase();
     let contentType = 'text/plain';
 
-    // 根據副檔名設定正確的 Content-Type
     switch (extname) {
         case '.html':
             contentType = 'text/html';
@@ -31,41 +58,13 @@ const sendRes = (filePath, res) => {
 
     fs.readFile(filePath, (error, data) => {
         if (error) {
-            res.statusCode = 404;
-            res.setHeader('Content-Type', 'text/plain');
-            res.end('找不到資源');
+            res.status(404).type('text/plain').send('找不到資源');
         } else {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', contentType);
-            res.end(data);
+            res.status(200).type(contentType).send(data);
         }
     });
-};
-
-const server = http.createServer((req, res) => {
-    const method = req.method;
-    const url = req.url;
-    console.log(url, method);
-
-    if (method === 'GET') {
-        // 根據 URL 對應到 html 資料夾內的檔案
-        let filePath = './html' + url;
-        
-        // 如果是根目錄，預設導向 index.html
-        if (url === '/') {
-            filePath = './html/index.html';
-        }
-
-        sendRes(filePath, res);
-    } else {
-        res.statusCode = 405;
-        res.setHeader('Content-Type', 'text/plain');
-        res.end('方法不允許');
-    }
 });
 
-const port = 5001;
-const ip = '127.0.0.1';
-server.listen(port, ip, () => {
+app.listen(port, ip, () => {
     console.log(`Server is running at http://${ip}:${port}`);
 });

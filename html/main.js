@@ -28,14 +28,20 @@ function closeBox() {
     console.log("close");
 }
 
-function handleSubmit(event) {
-    event.preventDefault(); // 防止表單真正提交，讓我們能先處理資料
+document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault(); // 阻止表單自動提交
 
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const alert = document.getElementById("alert");
+    alert.style.display="block";
+    const con= document.getElementById("login-container");
+    con.style.height="52%";
+    console.log('帳號：', username.value);
+    console.log('密碼：', password.value);
+    username.value="";
+    password.value="";
+    
 
-    console.log('帳號:', username);
-    console.log('密碼:', password);
-    
-    
-}
+    // 可以用 fetch 或其他方式送出
+});

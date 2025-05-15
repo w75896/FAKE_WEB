@@ -15,6 +15,19 @@ body {
 
 }
 
+#alert{
+    box-sizing: border-box;
+    display: none;
+    color: #691911;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #f4d6d2;
+    padding: 12px 20px;
+    border-radius: .5rem;
+    margin-bottom: 15px;
+    width: 95%;
+}
+
 #bg {
     width: 100%;
     height: 100%;
