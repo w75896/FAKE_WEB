@@ -36,7 +36,6 @@ function handleSubmit(event) {
 
     console.log('帳號:', username);
     console.log('密碼:', password);
-    window.location.replace("https://ilearn.fcu.edu.tw/login/index.php?lang=zh_tw");
     
     
 }
