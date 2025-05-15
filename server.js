@@ -10,14 +10,33 @@ const ip = '127.0.0.1';
 
 // 處理 POST 表單資料
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.json());
 // 處理 POST 路由
 app.post('/submit', (req, res) => {
-    const account = req.body.username;
-    const passwd = req.body.password;
+    const { username, password } = req.body;
+    console.log(username, password);
 
-    console.log('帳號:', account);
-    console.log('密碼:', passwd);
+    const newData = {
+        "account": `${username}`,
+        "password": `${password}`
+    }
+    fs.readFile('./account.json', 'utf8', (err, data) => {
+        if (err) {
+            console.log("Error:", err);
+            return res.status(500).send(`讀取檔案錯誤: ${err.message}`);  // 具體的錯誤訊息
+        }
+
+        let usersData = JSON.parse(data);
+        usersData.push(newData);
+        fs.writeFile('./account.json', JSON.stringify(usersData, null, 2), (err) => {
+            if (err) {
+                console.log("err1");
+                return res.status(500).send('寫入檔案錯誤');
+            }
+
+            console.log("success");
+        });
+    });
 
 });
 

