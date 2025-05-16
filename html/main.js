@@ -1,6 +1,11 @@
 const selector = document.getElementById("langSelector");
 const selected = selector.querySelector(".selected");
 const dropdown = selector.querySelector(".dropdown");
+const dash=document.querySelector(".fa");
+
+dash.addEventListener("click", () => {
+    window.location.assign("./Dashboard.html");
+});
 
 selector.addEventListener("click", () => {
     selector.classList.toggle("open");
@@ -36,7 +41,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
     const alert = document.getElementById("alert");
     alert.style.display = "block";
     const con = document.getElementById("login-container");
-    con.style.height = "52%";
+    con.style.height = "54%";
     console.log('帳號：', username.value);
     console.log('密碼：', password.value);
 
