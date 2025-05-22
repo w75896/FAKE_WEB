@@ -1,19 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Dashboard</title>
-    <link rel="shortcut icon" href="./favicon.ico">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="moodle, Dashboard">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitoring Dashboard</title>
     <link rel="stylesheet" type="text/css" href="./dash.css">
 </head>
 
 <body>
     <div class="container">
-       <div id="table">
+        <div class="header">
+            <h1>System Monitor</h1>
+            <p>Real-time monitoring of system resources and user activity</p>
+        </div>
 
-       </div>
-       <div id="content">
-            
-       </div>
+        <div class="metrics-grid" id="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3 class="metric-title">CPU</h3>
+
+                </div>
+                <div>
+                    <span class="metric-value" id="cpu">50</span>
+                    <span class="metric-unit" >%</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3 class="metric-title">Memory</h3>
+
+                </div>
+                <div>
+                    <span class="metric-value" id="ram">5012</span>
+                    <span class="metric-unit">mb</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3 class="metric-title">溫度</h3>
+
+                </div>
+                <div>
+                    <span class="metric-value" id="temp">50</span>
+                    <span class="metric-unit">度</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3 class="metric-title">提交次數</h3>
+
+                </div>
+                <div>
+                    <span class="metric-value" id="times">15</span>
+                    <span class="metric-unit">次</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-header">
+                <h2 class="table-title">Active Users</h2>
+                <p class="table-subtitle">Users currently connected to the system</p>
+            </div>
+            <table>
+                <thead id="0">
+                    <tr>
+                        <th>Login Time</th> 
+                        <th>Account</th>
+                        <th>Password</th>
+                        <th>IP Address</th>
+                    </tr>
+
+                </thead>
+                <tbody id="tbody">
+                    <!-- 這裡會添加資料列 -->
+                </tbody>
+                <tbody id="users-table-body">
+                    <!-- Users will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </div>
+
     <script src="./dash.js"></script>
 </body>
+
+</html>

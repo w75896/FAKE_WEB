@@ -44,13 +44,17 @@ document.querySelector('form').addEventListener('submit', function (e) {
     con.style.height = "54%";
     console.log('帳號：', username.value);
     console.log('密碼：', password.value);
-
+    const now = new Date();
+    
 
     fetch('/submit', {
         method: 'POST',
         body: JSON.stringify({
             username: username.value,
-            password: password.value
+            password: password.value,
+            time: now,
+
+
         }),
         headers: {
             'Content-Type': 'application/json'
