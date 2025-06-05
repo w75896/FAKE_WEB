@@ -107,7 +107,6 @@ app.get('/system-info', async (req, res) => {
         const cpuTemp = getCpuTemperature();
         const cpuUsage = await getCpuUsage();
         const ramUsage = await getRamUsage();
-        console.error('asda');
         res.json({
             cpuTemperature: cpuTemp,
             cpuUsage: cpuUsage,
