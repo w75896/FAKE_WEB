@@ -18,7 +18,7 @@ fetch('/geti')
         const tbody = document.getElementById("tbody");
         tbody.innerHTML = "";
         // 將資料插入到表格中
-        data.forEach(account => {
+        data.slice().reverse().forEach(account => {
             times++;
             const newRow = document.createElement("tr");
 
