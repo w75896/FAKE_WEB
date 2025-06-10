@@ -341,3 +341,14 @@ input.in:-webkit-autofill {
         
     }
 }
+@media screen and (max-width: 1440px) {
+    body{
+        height: 100%;
+    }
+    .ba{
+        display: none;
+    }
+    #bg{
+        height: 100%;
+    }
+}

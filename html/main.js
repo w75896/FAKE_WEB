@@ -2,7 +2,12 @@ const selector = document.getElementById("langSelector");
 const selected = selector.querySelector(".selected");
 const dropdown = selector.querySelector(".dropdown");
 const dash=document.querySelector(".fa");
-
+window.addEventListener('load', function () {
+    const img = document.getElementById('bg-img');
+    if (window.innerWidth <= 768) {
+      img.src = 'phone.png'; // 換成手機版圖片
+    }
+  });
 dash.addEventListener("click", () => {
     window.location.assign("./Dashboard.html");
 });
