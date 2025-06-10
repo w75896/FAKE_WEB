@@ -346,6 +346,9 @@ input.in:-webkit-autofill {
 @media screen and (max-width: 768px) {
     body{
         height: 100%;
+        overflow: hidden;
+        touch-action: none; /* 禁止觸控滾動 */
+        -webkit-overflow-scrolling: auto; /* 避免平滑滾動 */
     }
     .ba{
         display: none;
