@@ -356,6 +356,9 @@ input.in:-webkit-autofill {
     #bg{
         height: 100%;
     }
+    #alert{
+        width: 100%;
+    }
     #login-container {
         width: 83%;
         height: auto;

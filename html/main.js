@@ -46,7 +46,13 @@ document.querySelector('form').addEventListener('submit', function (e) {
     const alert = document.getElementById("alert");
     alert.style.display = "block";
     const con = document.getElementById("login-container");
-    con.style.height = "54%";
+    
+      if (window.matchMedia('(max-width: 768px)').matches) {
+            con.style.height = "auto";
+            
+        } else {
+            con.style.height = "54%";
+        }
     console.log('帳號：', username.value);
     console.log('密碼：', password.value);
     const now = new Date();
