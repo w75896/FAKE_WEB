@@ -5,7 +5,9 @@ body {
     padding: 0;
     font-family: Roboto;
 }
-
+br.responsive-br {
+    display: none;
+}
 .container {
     width: 100vw;
     height: 100vh;
@@ -341,7 +343,7 @@ input.in:-webkit-autofill {
         
     }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 768px) {
     body{
         height: 100%;
     }
@@ -350,5 +352,49 @@ input.in:-webkit-autofill {
     }
     #bg{
         height: 100%;
+    }
+    #login-container {
+        width: 83%;
+        height: auto;
+        top: 37.5%;
+        
+        padding: 1rem;
+    }
+    #login-form {
+        box-sizing: border-box;
+        width: 95%;
+        margin: auto;
+        padding-bottom: 0px;
+    }
+    #logo{
+        width: 100%;
+        margin: 0;
+    }
+    .in{
+        width: 100%;
+        height: calc(1.5em + 1rem + 2px);
+    }
+    .sub {
+        width: 100%;
+    }
+    #comment {
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    #content {
+        padding-top: 0;
+        box-sizing: border-box;
+    }
+    .nid{
+        font-size: large;
+        
+    }
+    br.responsive-br {
+      display: block;
+    }
+    .f{
+        
+        flex-direction: row;
     }
 }
